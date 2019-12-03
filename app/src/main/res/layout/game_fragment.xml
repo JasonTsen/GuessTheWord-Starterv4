@@ -23,6 +23,7 @@
         <variable
             name="gameViewModel"
             type="com.example.android.guesstheword.screens.game.GameViewModel" />
+
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/game_layout"
@@ -50,6 +51,7 @@
         <TextView
             android:id="@+id/word_text"
             android:text="@{@string/quote_format(gameViewModel.word)}"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -67,7 +69,20 @@
             tools:text="&quot;Tuna&quot;" />
 
         <TextView
+            android:id="@+id/word_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{gameViewModel.wordHint}"
+            app:layout_constraintBottom_toTopOf="@+id/score_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/word_is_text"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
             android:id="@+id/timer_text"
+            android:text="@{gameViewModel.currentTimeString}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
